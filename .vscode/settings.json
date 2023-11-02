@@ -1,0 +1,16 @@
+{
+    "cmake.configureSettings": {
+        "CMAKE_INSTALL_PREFIX": "install",
+        // "CMAKE_VERBOSE_MAKEFILE": "ON",
+    },
+    // vadimcn.vscode-lldb
+    "lldb.displayFormat": "auto",
+    "lldb.showDisassembly": "auto",
+    "lldb.dereferencePointers": true,
+    "lldb.consoleMode": "commands",
+    // dan-c-underwood.arm
+    "files.associations": {
+        "*.s": "arm",
+        "*.asm": "arm",
+    },
+}
