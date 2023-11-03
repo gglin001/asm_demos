@@ -1,6 +1,9 @@
 # ln -s /Users/allen/Downloads/riscv32-embecosm-macos-gcc13.2.0 $PWD/rv64/toolchain
 # ln -s /Users/allen/Downloads/riscv-embecosm-embedded-macos-20230903/ $PWD/rv64/toolchain-llvm
 
+rv64/toolchain/bin/riscv32-unknown-elf-c++ -S -O0 src/hello.c -o rv64/hello.asm
+rv64/toolchain/bin/riscv32-unknown-elf-c++ -g -S -O0 src/hello.c -o rv64/hello_d.asm
+
 rv64/toolchain/bin/riscv32-unknown-elf-c++ -g -O0 src/hello.c
 
 # or
