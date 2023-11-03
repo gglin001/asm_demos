@@ -12,6 +12,18 @@
             // "program": "${command:cmake.selectLaunchTarget}",
             "args": [],
             "cwd": "${workspaceFolder}"
-        }
+        },
+        // {
+        //     // not work
+        //     "name": "Remote attach",
+        //     "type": "lldb",
+        //     "request": "custom",
+        //     "targetCreateCommands": [
+        //         "target create ${workspaceFolder}/a.out"
+        //     ],
+        //     "processCreateCommands": [
+        //         "gdb-remote localhost:1234"
+        //     ]
+        // }
     ]
 }
