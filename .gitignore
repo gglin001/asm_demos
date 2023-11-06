@@ -5,3 +5,5 @@ toolchain
 toolchain-llvm
 
 a.out
+temp
+temp.*
