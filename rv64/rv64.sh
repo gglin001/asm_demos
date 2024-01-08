@@ -21,3 +21,13 @@ rv64/toolchain/bin/riscv32-unknown-elf-gdb a.out
 # b main
 # c
 # bt
+
+# rvv-intrinsic-doc
+git submodule init
+git submodule update --init --depth=1
+# TODO: use RV64 toolchain
+rv64/toolchain/bin/riscv32-unknown-elf-gcc -O0 \
+    -march=rv32gcv \
+    rv64/rvv-intrinsic-doc/examples/rvv_matmul.c
+# in qemu docker container
+qemu-riscv32 -cpu rv32,v=true,vext_spec=v1.0 a.out
