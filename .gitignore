@@ -1,7 +1,7 @@
-build/
 .cache/
-
-toolchain
-toolchain-llvm
+build/
 
 a.out
+
+toolchain/llvm
+toolchain/riscv-gnu-toolchain
