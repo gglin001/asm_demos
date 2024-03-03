@@ -1,6 +1,6 @@
 	.section	__TEXT,__text,regular,pure_instructions
-	.build_version macos, 14, 0	sdk_version 14, 0
-	.file	1 "/Users/allen/repos/asm_demos" "src/hello.c"
+	.build_version macos, 14, 0
+	.file	1 "/Users/allen/repos/_BLOGS/asm_demos" "src/hello.c"
 	.globl	_main                           ; -- Begin function main
 	.p2align	2
 _main:                                  ; @main
@@ -9,22 +9,21 @@ Lfunc_begin0:
 	.cfi_startproc
 ; %bb.0:
 	sub	sp, sp, #32
-	.cfi_def_cfa_offset 32
 	stp	x29, x30, [sp, #16]             ; 16-byte Folded Spill
 	add	x29, sp, #16
 	.cfi_def_cfa w29, 16
 	.cfi_offset w30, -8
 	.cfi_offset w29, -16
-	mov	w8, #0
+	mov	w8, #0                          ; =0x0
 	str	w8, [sp, #8]                    ; 4-byte Folded Spill
 	stur	wzr, [x29, #-4]
-	adrp	x0, l_.str@PAGE
-	add	x0, x0, l_.str@PAGEOFF
 Ltmp0:
 	.loc	1 4 3 prologue_end              ; src/hello.c:4:3
+	adrp	x0, l_.str@PAGE
+	add	x0, x0, l_.str@PAGEOFF
 	bl	_printf
 	ldr	w0, [sp, #8]                    ; 4-byte Folded Reload
-	.loc	1 5 3                           ; src/hello.c:5:3
+	.loc	1 5 3 epilogue_begin            ; src/hello.c:5:3
 	ldp	x29, x30, [sp, #16]             ; 16-byte Folded Reload
 	add	sp, sp, #32
 	ret
@@ -146,13 +145,13 @@ Ldebug_info_start0:
 	.byte	8                               ; Address Size (in bytes)
 	.byte	1                               ; Abbrev [1] 0xb:0x73 DW_TAG_compile_unit
 	.long	0                               ; DW_AT_producer
-	.short	12                              ; DW_AT_language
-	.long	47                              ; DW_AT_name
-	.long	59                              ; DW_AT_LLVM_sysroot
-	.long	111                             ; DW_AT_APPLE_sdk
+	.short	29                              ; DW_AT_language
+	.long	30                              ; DW_AT_name
+	.long	42                              ; DW_AT_LLVM_sysroot
+	.long	96                              ; DW_AT_APPLE_sdk
 .set Lset2, Lline_table_start0-Lsection_line ; DW_AT_stmt_list
 	.long	Lset2
-	.long	122                             ; DW_AT_comp_dir
+	.long	109                             ; DW_AT_comp_dir
 	.quad	Lfunc_begin0                    ; DW_AT_low_pc
 .set Lset3, Lfunc_end0-Lfunc_begin0     ; DW_AT_high_pc
 	.long	Lset3
@@ -170,11 +169,11 @@ Ldebug_info_start0:
 	.byte	7                               ; DW_AT_count
 	.byte	0                               ; End Of Children Mark
 	.byte	5                               ; Abbrev [5] 0x4f:0x7 DW_TAG_base_type
-	.long	151                             ; DW_AT_name
+	.long	145                             ; DW_AT_name
 	.byte	6                               ; DW_AT_encoding
 	.byte	1                               ; DW_AT_byte_size
 	.byte	6                               ; Abbrev [6] 0x56:0x7 DW_TAG_base_type
-	.long	156                             ; DW_AT_name
+	.long	150                             ; DW_AT_name
 	.byte	8                               ; DW_AT_byte_size
 	.byte	7                               ; DW_AT_encoding
 	.byte	7                               ; Abbrev [7] 0x5d:0x19 DW_TAG_subprogram
@@ -183,58 +182,48 @@ Ldebug_info_start0:
 	.long	Lset4
 	.byte	1                               ; DW_AT_frame_base
 	.byte	109
-	.long	177                             ; DW_AT_name
+	.long	170                             ; DW_AT_name
 	.byte	1                               ; DW_AT_decl_file
 	.byte	3                               ; DW_AT_decl_line
 	.long	118                             ; DW_AT_type
                                         ; DW_AT_external
 	.byte	5                               ; Abbrev [5] 0x76:0x7 DW_TAG_base_type
-	.long	182                             ; DW_AT_name
+	.long	175                             ; DW_AT_name
 	.byte	5                               ; DW_AT_encoding
 	.byte	4                               ; DW_AT_byte_size
 	.byte	0                               ; End Of Children Mark
 Ldebug_info_end0:
 	.section	__DWARF,__debug_str,regular,debug
 Linfo_string:
-	.asciz	"Apple clang version 15.0.0 (clang-1500.0.40.1)" ; string offset=0
-	.asciz	"src/hello.c"                   ; string offset=47
-	.asciz	"/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk" ; string offset=59
-	.asciz	"MacOSX.sdk"                    ; string offset=111
-	.asciz	"/Users/allen/repos/asm_demos"  ; string offset=122
-	.asciz	"char"                          ; string offset=151
-	.asciz	"__ARRAY_SIZE_TYPE__"           ; string offset=156
-	.byte	0                               ; string offset=176
-	.asciz	"main"                          ; string offset=177
-	.asciz	"int"                           ; string offset=182
+	.asciz	"Homebrew clang version 17.0.6" ; string offset=0
+	.asciz	"src/hello.c"                   ; string offset=30
+	.asciz	"/Library/Developer/CommandLineTools/SDKs/MacOSX14.sdk" ; string offset=42
+	.asciz	"MacOSX14.sdk"                  ; string offset=96
+	.asciz	"/Users/allen/repos/_BLOGS/asm_demos" ; string offset=109
+	.asciz	"char"                          ; string offset=145
+	.asciz	"__ARRAY_SIZE_TYPE__"           ; string offset=150
+	.asciz	"main"                          ; string offset=170
+	.asciz	"int"                           ; string offset=175
 	.section	__DWARF,__apple_names,regular,debug
 Lnames_begin:
 	.long	1212240712                      ; Header Magic
 	.short	1                               ; Header Version
 	.short	0                               ; Header Hash Function
-	.long	2                               ; Header Bucket Count
-	.long	2                               ; Header Hash Count
+	.long	1                               ; Header Bucket Count
+	.long	1                               ; Header Hash Count
 	.long	12                              ; Header Data Length
 	.long	0                               ; HeaderData Die Offset Base
 	.long	1                               ; HeaderData Atom Count
 	.short	1                               ; DW_ATOM_die_offset
 	.short	6                               ; DW_FORM_data4
 	.long	0                               ; Bucket 0
-	.long	1                               ; Bucket 1
 	.long	2090499946                      ; Hash in Bucket 0
-	.long	5381                            ; Hash in Bucket 1
-.set Lset5, LNames1-Lnames_begin        ; Offset in Bucket 0
+.set Lset5, LNames0-Lnames_begin        ; Offset in Bucket 0
 	.long	Lset5
-.set Lset6, LNames0-Lnames_begin        ; Offset in Bucket 1
-	.long	Lset6
-LNames1:
-	.long	177                             ; main
+LNames0:
+	.long	170                             ; main
 	.long	1                               ; Num DIEs
 	.long	93
-	.long	0
-LNames0:
-	.long	176                             ; 
-	.long	1                               ; Num DIEs
-	.long	50
 	.long	0
 	.section	__DWARF,__apple_objc,regular,debug
 Lobjc_begin:
@@ -284,28 +273,28 @@ Ltypes_begin:
 	.long	193495088                       ; Hash in Bucket 2
 	.long	2090147939                      ; Hash in Bucket 2
 	.long	-594775205                      ; Hash in Bucket 2
-.set Lset7, Ltypes1-Ltypes_begin        ; Offset in Bucket 2
+.set Lset6, Ltypes2-Ltypes_begin        ; Offset in Bucket 2
+	.long	Lset6
+.set Lset7, Ltypes0-Ltypes_begin        ; Offset in Bucket 2
 	.long	Lset7
-.set Lset8, Ltypes2-Ltypes_begin        ; Offset in Bucket 2
+.set Lset8, Ltypes1-Ltypes_begin        ; Offset in Bucket 2
 	.long	Lset8
-.set Lset9, Ltypes0-Ltypes_begin        ; Offset in Bucket 2
-	.long	Lset9
-Ltypes1:
-	.long	182                             ; int
+Ltypes2:
+	.long	175                             ; int
 	.long	1                               ; Num DIEs
 	.long	118
 	.short	36
 	.byte	0
 	.long	0
-Ltypes2:
-	.long	151                             ; char
+Ltypes0:
+	.long	145                             ; char
 	.long	1                               ; Num DIEs
 	.long	79
 	.short	36
 	.byte	0
 	.long	0
-Ltypes0:
-	.long	156                             ; __ARRAY_SIZE_TYPE__
+Ltypes1:
+	.long	150                             ; __ARRAY_SIZE_TYPE__
 	.long	1                               ; Num DIEs
 	.long	86
 	.short	36

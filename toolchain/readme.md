@@ -24,3 +24,9 @@ ln -sf /opt/homebrew/opt/riscv-gnu-toolchain $PWD/toolchain/riscv-gnu-toolchain
 ### docker container
 
 TODO
+
+### download toolchain from embecosm
+
+https://www.embecosm.com/resources/tool-chain-downloads/
+
+TODO

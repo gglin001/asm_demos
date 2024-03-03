@@ -1,11 +1,11 @@
 	.file	"hello.c"
 	.option nopic
-	.attribute arch, "rv32i2p1_m2p0_a2p1_c2p0"
+	.attribute arch, "rv64i2p1_m2p0_a2p1_f2p2_d2p2_c2p0_zicsr2p0"
 	.attribute unaligned_access, 0
 	.attribute stack_align, 16
 	.text
 	.section	.rodata
-	.align	2
+	.align	3
 .LC0:
 	.string	"hello"
 	.text
@@ -17,10 +17,10 @@ main:
 	.cfi_startproc
 	addi	sp,sp,-16
 	.cfi_def_cfa_offset 16
-	sw	ra,12(sp)
-	sw	s0,8(sp)
-	.cfi_offset 1, -4
-	.cfi_offset 8, -8
+	sd	ra,8(sp)
+	sd	s0,0(sp)
+	.cfi_offset 1, -8
+	.cfi_offset 8, -16
 	addi	s0,sp,16
 	.cfi_def_cfa 8, 0
 	lui	a5,%hi(.LC0)
@@ -28,9 +28,9 @@ main:
 	call	puts
 	li	a5,0
 	mv	a0,a5
-	lw	ra,12(sp)
+	ld	ra,8(sp)
 	.cfi_restore 1
-	lw	s0,8(sp)
+	ld	s0,0(sp)
 	.cfi_restore 8
 	.cfi_def_cfa 2, 16
 	addi	sp,sp,16
@@ -39,4 +39,4 @@ main:
 	.cfi_endproc
 .LFE1:
 	.size	main, .-main
-	.ident	"GCC: ('riscv32-embecosm-macos-gcc13.2.0') 13.2.0"
+	.ident	"GCC: (gc891d8dc2) 13.2.0"
