@@ -1,18 +1,21 @@
+riscv64-unknown-elf-gcc -g -O0 src/hello.c
+
 # spike
-spike pk a.out
+spike --isa rv64gcv pk a.out
 
 # spike debug
-spike -d pk a.out
+spike --isa rv64gcv -d pk a.out
 
 # in qemu docker container
 qemu-riscv64 \
-    rv32,v=true,vext_spec=v1.0 \
+    rv64,v=true,vext_spec=v1.0 \
     -g 1234 a.out
 
-# host
-rv64/toolchain/bin/riscv32-unknown-elf-gdb a.out
-# target remote :1234
-# l
-# b main
-# c
-# bt
+# # TODO support gdb on mac?
+# # host
+# riscv64-unknown-elf-gdb a.out
+# # target remote :1234
+# # l
+# # b main
+# # c
+# # bt

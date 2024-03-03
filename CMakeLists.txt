@@ -5,3 +5,5 @@ project(cpp_demos LANGUAGES C CXX ASM)
 if(APPLE)
   add_subdirectory(arm64)
 endif()
+
+# TODO: support compile riscv
