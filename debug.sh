@@ -19,3 +19,5 @@ qemu-riscv64 \
 # # b main
 # # c
 # # bt
+
+# TODO can lldb be used for riscv target?
