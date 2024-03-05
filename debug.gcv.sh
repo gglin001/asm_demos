@@ -1,5 +1,6 @@
 # toolchain is built with
 # `./configure --prefix=$RISCV --with-arch=rv64gc --with-abi=lp64d --with-sim=spike --enable-llvm`
+# TODO: support macos
 
 # gcc
 args=(
