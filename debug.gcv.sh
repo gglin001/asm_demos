@@ -1,3 +1,6 @@
+# toolchain is built with
+# `./configure --prefix=$RISCV --with-arch=rv64gc --with-abi=lp64d --with-sim=spike --enable-llvm`
+
 # hello
 riscv64-unknown-elf-gcc -g -O0 src/hello.c
 
