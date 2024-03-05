@@ -23,7 +23,15 @@ ln -sf /opt/homebrew/opt/riscv-gnu-toolchain $PWD/toolchain/riscv-gnu-toolchain
 
 ### docker container
 
-TODO
+https://github.com/gglin001/Dockerfiles/tree/master/riscv
+
+```bash
+# `/opt/riscv` is riscv toolchain with llvm built
+ln -sf /opt/riscv $PWD/toolchain/llvm
+
+# `/opt/riscv` is riscv toolchain
+ln -sf /opt/riscv $PWD/toolchain/riscv-gnu-toolchain
+```
 
 ### download toolchain from embecosm
 

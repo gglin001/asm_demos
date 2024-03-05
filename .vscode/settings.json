@@ -2,6 +2,9 @@
     "terminal.integrated.env.osx": {
         "EXT_PATH": "${workspaceFolder}/build/bin:${workspaceFolder}/toolchain/llvm/bin:${workspaceFolder}/toolchain/riscv-gnu-toolchain/bin",
     },
+    "terminal.integrated.env.linux": {
+        "EXT_PATH": "${workspaceFolder}/build/bin:${workspaceFolder}/toolchain/llvm/bin:${workspaceFolder}/toolchain/riscv-gnu-toolchain/bin",
+    },
     "cmake.configureSettings": {
         "CMAKE_INSTALL_PREFIX": "${workspaceFolder}/build/install",
         // "CMAKE_VERBOSE_MAKEFILE": "ON",
