@@ -11,7 +11,6 @@ int main() {
   float y[2] = {2.0, 2.0};
 
   printf("y[1]: %f \n", y[1]);
-  // TODO: check why segfault
   saxpy(n, a, x, y);
   printf("after saxpy\n");
   printf("y[1]: %f \n", y[1]);
