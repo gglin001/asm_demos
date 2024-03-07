@@ -8,12 +8,12 @@ args=(
   -mabi=lp64
   # -g
   -O0
-  # -S
   -v
   src/hello.c
   # src/rvv_strlen.c
 )
 set -x
+riscv64-unknown-elf-gcc -S "${args[@]}"
 riscv64-unknown-elf-gcc "${args[@]}"
 set +x
 
@@ -26,12 +26,12 @@ args=(
   -I$PWD/toolchain/riscv-gnu-toolchain/riscv64-unknown-elf/include
   # -g
   -O0
-  # -S
   -v
   src/hello.c
   # src/rvv_strlen.c
 )
 set -x
+clang -S "${args[@]}"
 clang "${args[@]}"
 set +x
 
