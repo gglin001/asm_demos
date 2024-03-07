@@ -14,9 +14,4 @@
     "lldb.showDisassembly": "auto",
     "lldb.dereferencePointers": true,
     "lldb.consoleMode": "commands",
-    // dan-c-underwood.arm
-    "files.associations": {
-        "*.s": "arm",
-        "*.asm": "arm",
-    },
 }
