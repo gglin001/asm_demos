@@ -1,13 +1,13 @@
 {
     "terminal.integrated.env.osx": {
-        "EXT_PATH": "${workspaceFolder}/build/bin:${workspaceFolder}/toolchain/llvm/bin:${workspaceFolder}/toolchain/riscv-gnu-toolchain/bin",
+        "EXT_PATH": "${workspaceFolder}/build/bin:${workspaceFolder}/toolchain/llvm/bin:${workspaceFolder}/toolchain/riscv-gnu-toolchain/bin:${workspaceFolder}/build/bin",
     },
     "terminal.integrated.env.linux": {
-        "EXT_PATH": "${workspaceFolder}/build/bin:${workspaceFolder}/toolchain/llvm/bin:${workspaceFolder}/toolchain/riscv-gnu-toolchain/bin",
+        "EXT_PATH": "${workspaceFolder}/build/bin:${workspaceFolder}/toolchain/llvm/bin:${workspaceFolder}/toolchain/riscv-gnu-toolchain/bin:${workspaceFolder}/build/bin",
     },
     "cmake.configureSettings": {
         "CMAKE_INSTALL_PREFIX": "${workspaceFolder}/build/install",
-        // "CMAKE_VERBOSE_MAKEFILE": "ON",
+        "CMAKE_VERBOSE_MAKEFILE": "ON",
     },
     // vadimcn.vscode-lldb
     "lldb.displayFormat": "auto",
