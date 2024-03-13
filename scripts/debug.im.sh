@@ -1,7 +1,6 @@
 # toolchain is built with
 # `./configure --prefix=$RISCV --with-arch=rv64im --with-abi=lp64 --with-sim=spike --enable-llvm`
 
-# gcc
 args=(
   -march=rv64im
   -mabi=lp64
@@ -9,7 +8,6 @@ args=(
   -O0
   -v
   csrc/hello.c
-  # csrc/rvv_strlen.c
 )
 set -x
 riscv64-unknown-elf-gcc -S "${args[@]}"
@@ -27,7 +25,6 @@ args=(
   -O0
   -v
   csrc/hello.c
-  # csrc/rvv_strlen.c
 )
 set -x
 clang -S "${args[@]}"

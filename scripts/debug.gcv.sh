@@ -1,22 +1,19 @@
 # toolchain is built with
 # `./configure --prefix=$RISCV --with-arch=rv64gc --with-abi=lp64d --with-sim=spike --enable-llvm`
 
-# gcc
 args=(
   -march=rv64gcv
   -mabi=lp64d
   # -g
   -O0
-  # -S
   -v
-  # csrc/hello.c
   csrc/rvv_strlen.c
 )
 set -x
+riscv64-unknown-elf-gcc -S "${args[@]}"
 riscv64-unknown-elf-gcc "${args[@]}"
 set +x
 
-# clang
 args=(
   -march=rv64gcv
   -mabi=lp64d
@@ -25,12 +22,11 @@ args=(
   -I$PWD/toolchain/riscv-gnu-toolchain/riscv64-unknown-elf/include
   # -g
   -O0
-  # -S
   -v
-  # csrc/hello.c
   csrc/rvv_strlen.c
 )
 set -x
+clang -S "${args[@]}"
 clang "${args[@]}"
 set +x
 
