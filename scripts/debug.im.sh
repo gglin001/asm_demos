@@ -1,6 +1,5 @@
 # toolchain is built with
 # `./configure --prefix=$RISCV --with-arch=rv64im --with-abi=lp64 --with-sim=spike --enable-llvm`
-# TODO: support macos
 
 # gcc
 args=(
@@ -9,8 +8,8 @@ args=(
   # -g
   -O0
   -v
-  src/hello.c
-  # src/rvv_strlen.c
+  csrc/hello.c
+  # csrc/rvv_strlen.c
 )
 set -x
 riscv64-unknown-elf-gcc -S "${args[@]}"
@@ -27,8 +26,8 @@ args=(
   # -g
   -O0
   -v
-  src/hello.c
-  # src/rvv_strlen.c
+  csrc/hello.c
+  # csrc/rvv_strlen.c
 )
 set -x
 clang -S "${args[@]}"
@@ -37,15 +36,12 @@ set +x
 
 # =============================================================================
 
-# spike
-spike --isa rv64gc pk a.out
+spike --isa rv64imac pk a.out
+# spike --isa rv64gc pk a.out
 
-spike --isa rv64im pk a.out
-
-# in qemu docker container
-qemu-riscv64 \
-  -cpu rv64 a.out
-
-# =============================================================================
-
-# debug
+args=(
+  # -cpu rv64
+  -cpu rv64,i=true,m=true,a=true,f=true,d=false,c=false,e=false
+  a.out
+)
+qemu-riscv64 "${args[@]}"

@@ -1,6 +1,7 @@
 .cache/
 build/
 
+asm/*.s
 a.out
 
 toolchain/llvm

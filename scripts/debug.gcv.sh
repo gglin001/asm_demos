@@ -1,6 +1,5 @@
 # toolchain is built with
 # `./configure --prefix=$RISCV --with-arch=rv64gc --with-abi=lp64d --with-sim=spike --enable-llvm`
-# TODO: support macos
 
 # gcc
 args=(
@@ -10,8 +9,8 @@ args=(
   -O0
   # -S
   -v
-  # src/hello.c
-  src/rvv_strlen.c
+  # csrc/hello.c
+  csrc/rvv_strlen.c
 )
 set -x
 riscv64-unknown-elf-gcc "${args[@]}"
@@ -28,8 +27,8 @@ args=(
   -O0
   # -S
   -v
-  # src/hello.c
-  src/rvv_strlen.c
+  # csrc/hello.c
+  csrc/rvv_strlen.c
 )
 set -x
 clang "${args[@]}"
@@ -37,31 +36,15 @@ set +x
 
 # =============================================================================
 
-# spike
 spike --isa rv64gcv pk a.out
+# spike --isa rv64gcv -d pk a.out
 
-# spike debug
-spike --isa rv64gcv -d pk a.out
-
-# in qemu docker container
-qemu-riscv64 \
+args=(
+  # -cpu rv64
   -cpu rv64,v=true,vext_spec=v1.0 a.out
+  a.out
+)
+qemu-riscv64 "${args[@]}"
 
-# =============================================================================
-
-# debug
-
-# TODO support gdb on mac?
-# # in qemu docker container
-# qemu-riscv64 \
-#   rv64,v=true,vext_spec=v1.0 \
-#   -g 1234 a.out
-# # host
-# riscv64-unknown-elf-gdb a.out
-# # target remote :1234
-# # l
-# # b main
-# # c
-# # bt
-
+# TODO: how to debug?
 # TODO can lldb be used for riscv target?
