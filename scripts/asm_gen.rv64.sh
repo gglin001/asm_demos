@@ -1,4 +1,4 @@
-# setup `toolchain/readme.md` first
+# setup `toolchain/README.md` first
 
 ###############################################################################
 
@@ -14,14 +14,6 @@ args=(
 riscv64-unknown-elf-gcc "${args[@]}"
 
 ###############################################################################
-
-# clang
-# target-triple: https://clang.llvm.org/docs/CrossCompilation.html#target-triple
-
-# arm64-apple-darwin
-# clang -target arm64-apple-darwin -S -O0 csrc/hello.c -o arm64/hello.s
-
-#####
 
 # riscv64-unknown-elf
 args=(
