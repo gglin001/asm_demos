@@ -11,7 +11,7 @@ args=(
   # -g
   -O0
   -v
-  csrc/rvv_strlen.c
+  cc/rvv_strlen.c
 )
 riscv64-unknown-elf-gcc -S "${args[@]}"
 riscv64-unknown-elf-gcc "${args[@]}"
@@ -27,7 +27,7 @@ args=(
   # -g
   -O0
   -v
-  csrc/rvv_strlen.c
+  cc/rvv_strlen.c
 )
 clang -S "${args[@]}"
 clang "${args[@]}"

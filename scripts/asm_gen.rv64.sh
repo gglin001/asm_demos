@@ -9,7 +9,7 @@ args=(
   -O0
   # -v
   -o asm_gen/hello.s
-  csrc/hello.c
+  cc/hello.c
 )
 riscv64-unknown-elf-gcc "${args[@]}"
 
@@ -27,7 +27,7 @@ args=(
   -O0
   # -v
   -o asm_gen/add_f32.s
-  csrc/add_f32.c
+  cc/add_f32.c
 )
 clang "${args[@]}"
 

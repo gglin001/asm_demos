@@ -11,7 +11,7 @@ args=(
   # -g
   -O0
   -v
-  csrc/hello.c
+  cc/hello.c
 )
 riscv64-unknown-elf-gcc -S "${args[@]}"
 riscv64-unknown-elf-gcc "${args[@]}"
@@ -27,7 +27,7 @@ args=(
   # -g
   -O0
   -v
-  csrc/hello.c
+  cc/hello.c
 )
 clang -S "${args[@]}"
 clang "${args[@]}"
