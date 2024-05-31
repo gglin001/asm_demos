@@ -6,3 +6,5 @@ a.out
 
 toolchain/llvm
 toolchain/riscv-gnu-toolchain
+
+.vscode/
