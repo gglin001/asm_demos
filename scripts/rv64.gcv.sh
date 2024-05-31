@@ -1,6 +1,10 @@
 # toolchain is built with
 # `./configure --prefix=$RISCV --with-arch=rv64gc --with-abi=lp64d --with-sim=spike --enable-llvm`
 
+# set -x
+
+###############################################################################
+
 args=(
   -march=rv64gcv
   -mabi=lp64d
@@ -9,10 +13,10 @@ args=(
   -v
   csrc/rvv_strlen.c
 )
-set -x
 riscv64-unknown-elf-gcc -S "${args[@]}"
 riscv64-unknown-elf-gcc "${args[@]}"
-set +x
+
+#####
 
 args=(
   -march=rv64gcv
@@ -25,12 +29,10 @@ args=(
   -v
   csrc/rvv_strlen.c
 )
-set -x
 clang -S "${args[@]}"
 clang "${args[@]}"
-set +x
 
-# =============================================================================
+#####
 
 spike --isa rv64gcv pk a.out
 # spike --isa rv64gcv -d pk a.out
@@ -42,5 +44,4 @@ args=(
 )
 qemu-riscv64 "${args[@]}"
 
-# TODO: how to debug?
-# TODO can lldb be used for riscv target?
+###############################################################################

@@ -1,6 +1,10 @@
 # toolchain is built with
 # `./configure --prefix=$RISCV --with-arch=rv64im --with-abi=lp64 --with-sim=spike --enable-llvm`
 
+# set -x
+
+###############################################################################
+
 args=(
   -march=rv64im
   -mabi=lp64
@@ -9,12 +13,11 @@ args=(
   -v
   csrc/hello.c
 )
-set -x
 riscv64-unknown-elf-gcc -S "${args[@]}"
 riscv64-unknown-elf-gcc "${args[@]}"
-set +x
 
-# clang
+#####
+
 args=(
   -march=rv64im
   -mabi=lp64
@@ -26,12 +29,10 @@ args=(
   -v
   csrc/hello.c
 )
-set -x
 clang -S "${args[@]}"
 clang "${args[@]}"
-set +x
 
-# =============================================================================
+#####
 
 spike --isa rv64imac pk a.out
 # spike --isa rv64gc pk a.out
@@ -42,3 +43,5 @@ args=(
   a.out
 )
 qemu-riscv64 "${args[@]}"
+
+###############################################################################

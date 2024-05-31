@@ -1,14 +1,20 @@
 # setup `toolchain/readme.md` first
 
+###############################################################################
+
 # gcc
 riscv64-unknown-elf-gcc -S -O0 csrc/hello.c -o asm/hello.s
 # riscv64-unknown-elf-gcc -S -g -O0 csrc/hello.c -o asm/hello_d.s
 
+###############################################################################
+
 # clang
 # target-triple: https://clang.llvm.org/docs/CrossCompilation.html#target-triple
 
-# # arm64-apple-darwin
+# arm64-apple-darwin
 # clang -target arm64-apple-darwin -S -O0 csrc/hello.c -o arm64/hello.s
+
+#####
 
 # riscv64-unknown-elf
 args=(
@@ -25,3 +31,5 @@ args=(
   csrc/add_f32.c
 )
 clang "${args[@]}"
+
+###############################################################################
