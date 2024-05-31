@@ -1,7 +1,7 @@
 .cache/
 build/
 
-asm/*.s
+asm_gen/*.s
 a.out
 
 toolchain/llvm
