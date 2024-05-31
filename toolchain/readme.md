@@ -23,14 +23,17 @@ brew tap riscv-software-src/riscv
 brew install riscv-tools
 
 # https://formulae.brew.sh/formula/llvm
-brew install llvm
+# brew install llvm
+#
+# or build llvm from source
 ```
 
 symbol link
 
 ```bash
 # llvm
-ln -sf /opt/homebrew/opt/llvm $PWD/toolchain/llvm
+# ln -sf /opt/homebrew/opt/llvm $PWD/toolchain/llvm
+ln -sf ABS_PATH_TO/llvm $PWD/toolchain/llvm
 
 # riscv-gnu-toolchain
 ln -sf /opt/homebrew/opt/riscv-gnu-toolchain $PWD/toolchain/riscv-gnu-toolchain
