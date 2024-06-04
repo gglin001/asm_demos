@@ -8,4 +8,4 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin/)
 
 add_subdirectory(asm)
 add_subdirectory(asm_gen)
-add_subdirectory(csrc)
+add_subdirectory(cc)

@@ -13,6 +13,7 @@ args=(
   #
   --target=riscv64-unknown-elf
   #
+  -O0
   -v
   -S
   -o $DIR/addi.s
