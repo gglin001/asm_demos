@@ -49,6 +49,18 @@ clang "${args[@]}"
 
 DIR=_demos/inline_asm_riscv.mlir && mkdir -p $DIR
 args=(
+  # -M no-aliases
+  # -x
+  # -s
+  -d
+  $DIR/main
+)
+llvm-objdump "${args[@]}" >$DIR/main.objdump
+
+#####
+
+DIR=_demos/inline_asm_riscv.mlir && mkdir -p $DIR
+args=(
   # -l
   --isa rv64gc
   pk
