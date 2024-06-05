@@ -15,6 +15,7 @@ args=(
   -march=rv64im
   -mcpu=generic-rv64
   -mabi=lp64
+  -mcpu=generic-rv64
   --target=riscv64-unknown-elf
   # --gcc-toolchain=$PWD/toolchain/riscv-gnu-toolchain
   -O0
@@ -33,6 +34,7 @@ args=(
   -mcpu=generic-rv64
   # -mabi=lp64
   -mabi=lp64d
+  -mcpu=generic-rv64
   --target=riscv64-unknown-elf
   --gcc-toolchain=$PWD/toolchain/riscv-gnu-toolchain
   -O0

@@ -1,6 +1,6 @@
 ###############################################################################
 
-DIR=_demos/addi.mlir && mkdir -p $DIR
+DIR=_demos/addi.ll && mkdir -p $DIR
 args=(
   #
   -march=rv64im_zicsr_zve64x_zvl512b
@@ -11,6 +11,7 @@ args=(
   -mabi=lp64
   # -mabi=lp64d
   #
+  -mcpu=generic-rv64
   --target=riscv64-unknown-elf
   #
   -O0

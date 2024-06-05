@@ -8,6 +8,7 @@
 args=(
   -march=rv64im
   -mabi=lp64
+  -mcpu=generic-rv64
   # -g
   -O0
   -v
@@ -21,8 +22,9 @@ riscv64-unknown-elf-gcc "${args[@]}"
 args=(
   -march=rv64im
   -mabi=lp64
-  --gcc-toolchain=$PWD/toolchain/riscv-gnu-toolchain
+  -mcpu=generic-rv64
   --target=riscv64-unknown-elf
+  --gcc-toolchain=$PWD/toolchain/riscv-gnu-toolchain
   -I$PWD/toolchain/riscv-gnu-toolchain/riscv64-unknown-elf/include
   # -g
   -O0
