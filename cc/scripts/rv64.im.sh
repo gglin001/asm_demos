@@ -8,7 +8,6 @@
 args=(
   -march=rv64im
   -mabi=lp64
-  -mcpu=generic-rv64
   # -g
   -O0
   -v
