@@ -21,8 +21,9 @@ riscv64-unknown-elf-gcc "${args[@]}"
 args=(
   -march=rv64gcv
   -mabi=lp64d
-  --gcc-toolchain=$PWD/toolchain/riscv-gnu-toolchain
+  -mcpu=generic-rv64
   --target=riscv64-unknown-elf
+  --gcc-toolchain=$PWD/toolchain/riscv-gnu-toolchain
   -I$PWD/toolchain/riscv-gnu-toolchain/riscv64-unknown-elf/include
   # -g
   -O0

@@ -36,6 +36,7 @@ args=(
   -mabi=lp64
   # -mabi=lp64d
   #
+  -mcpu=generic-rv64
   --target=riscv64-unknown-elf
   #
   -O0

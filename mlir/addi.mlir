@@ -1,3 +1,5 @@
+// check `%S/addi.sh`
+
 module {
   func.func @const_16xi32() -> vector<16xi32> {
     %cst = arith.constant dense<[1, 1, 1, 1, 1, 1, 1, -1, -1, 1, 1, 1, 1, 1, 1, 1]> : vector<16xi32>
