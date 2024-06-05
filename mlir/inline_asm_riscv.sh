@@ -45,4 +45,15 @@ args=(
 )
 clang "${args[@]}"
 
+#####
+
+DIR=_demos/inline_asm_riscv.mlir && mkdir -p $DIR
+args=(
+  # -l
+  --isa rv64gc
+  pk
+  $DIR/main
+)
+spike "${args[@]}"
+
 ###############################################################################
