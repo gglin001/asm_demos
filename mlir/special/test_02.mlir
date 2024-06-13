@@ -23,13 +23,16 @@ module {
     llvm.return
   }
 
-  llvm.func @const_16xi32() -> vector<16xi32> {
-    %0 = llvm.mlir.constant(dense<[1, 1, 1, 1, 1, 1, 1, -1, -1, 1, 1, 1, 1, 1, 1, 1]> : vector<16xi32>) : vector<16xi32>
+  llvm.func @const_16xi32() -> () {
+    %c_16 = llvm.mlir.constant(16 : i32) : i32
+    %0 = llvm.alloca %c_16 x f32 : (i32) -> !llvm.ptr
+    %c0 = llvm.mlir.constant(dense<[1, 1, 1, 1, 1, 1, 1, -1, -1, 1, 1, 1, 1, 1, 1, 1]> : vector<16xi32>) : vector<16xi32>
+    llvm.store %c0, %0 : vector<16xi32>, !llvm.ptr
 
     %c_1 = llvm.mlir.constant(1 : i1) : i1
     %flag_addr = llvm.mlir.addressof @flag : !llvm.ptr
     llvm.store %c_1, %flag_addr : i1, !llvm.ptr
 
-    llvm.return %0 : vector<16xi32>
+    llvm.return
   }
 }
