@@ -12,11 +12,11 @@ module {
     %0 = llvm.load %flag_addr : !llvm.ptr -> i1
     llvm.br ^bb0
   ^bb0:
-    llvm.cond_br %0, ^bb1, ^bb2
+    llvm.cond_br %0, ^bb2, ^bb1
   ^bb1:
-    llvm.return
-  ^bb2:
     llvm.br ^bb0
+  ^bb2:
+    llvm.return
   }
 
   llvm.func @placeholder(%0 : !llvm.ptr, %1 : !llvm.ptr) -> (){
