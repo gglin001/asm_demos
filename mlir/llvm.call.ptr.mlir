@@ -2,8 +2,6 @@ module {
 
   llvm.func @main() {
     %1 = llvm.mlir.addressof @const_16xi32 : !llvm.ptr
-    // TODO: add a arg for callee
-    // llvm.call %1() : !llvm.ptr, () -> vector<16xi32>
     llvm.call @placeholder(%1, %1) : (!llvm.ptr, !llvm.ptr) -> ()
     llvm.return
   }
