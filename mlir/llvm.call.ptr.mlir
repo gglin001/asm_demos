@@ -8,7 +8,7 @@ module {
     llvm.return
   }
 
-  llvm.func @placeholder(%0 : !llvm.ptr, %1 : !llvm.ptr) -> (){
+  llvm.func @placeholder(%0 : !llvm.ptr, %1 : !llvm.ptr) -> () {
     llvm.return
   }
 
