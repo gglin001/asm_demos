@@ -4,7 +4,8 @@ args=(
   -o $DIR/main.ll
   #
   # collections/t0.call.mlir
-  collections/t1.cmp.mlir
+  # collections/t1.cmp.mlir
+  collections/t2.cmp.mlir
   #
 )
 mlir-translate "${args[@]}"
