@@ -2,6 +2,6 @@ DIR=_demos/tmp && mkdir -p $DIR
 args=(
   --mlir-to-llvmir
   -o $DIR/main.ll
-  collections/llvm.call.ptr.f32.mlir
+  collections/t0.call.mlir
 )
 mlir-translate "${args[@]}"
