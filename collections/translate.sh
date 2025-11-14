@@ -1,7 +1,6 @@
 DIR=_demos/_collections && mkdir -p $DIR
 args=(
-  # --mlir-to-llvmir
-  --llvmir-to-ll
+  --mlir-to-llvmir
   #
   -o $DIR/main.ll
   #
