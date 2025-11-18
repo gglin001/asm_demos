@@ -14,7 +14,8 @@ DIR=_demos/_collections && mkdir -p $DIR
 # )
 # opt "${args[@]}"
 
-# pixi add mlir=16
+# https://releases.llvm.org/16.0.0/docs/OpaquePointers.html
+# https://releases.llvm.org/15.0.0/docs/OpaquePointers.html
 # pixi add mlir=15
 
 args=(
