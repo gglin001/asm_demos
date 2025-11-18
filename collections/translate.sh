@@ -3,11 +3,7 @@ args=(
   --mlir-to-llvmir
   #
   -o $DIR/main.ll
-  #
-  # collections/t0.call.mlir
-  # collections/t1.cmp.mlir
-  # collections/t2.cmp.mlir
-  collections/t3.cmp.mlir
+  collections/main.mlir
   #
 )
 mlir-translate "${args[@]}"

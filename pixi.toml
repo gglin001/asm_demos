@@ -1,0 +1,9 @@
+[workspace]
+authors = ["Allen Guo <guosonglin001@gmail.com>"]
+channels = ["conda-forge"]
+name = "asm_demos"
+platforms = ["osx-arm64"]
+version = "0.1.0"
+
+[dependencies]
+# llvmdev = "21.*"
