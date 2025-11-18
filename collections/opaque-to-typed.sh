@@ -32,7 +32,7 @@ args=(
   --mlir-to-llvmir
   --opaque-pointers=0
   #
-  -o $DIR/main.ll.mir.ll
+  -o $DIR/main.ll.mlir.ll
   $DIR/main.ll.mir
   #
 )
