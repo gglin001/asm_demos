@@ -1,4 +1,5 @@
-# DIR=_demos/_collections && mkdir -p $DIR
+DIR=_demos/_collections && mkdir -p $DIR
+
 # args=(
 #   #
 #   -S
@@ -20,7 +21,7 @@ args=(
   #
   --import-llvm
   #
-  -o $DIR/main.ll.mir
+  -o $DIR/main.ll.mlir
   collections/main.ll
   #
 )
