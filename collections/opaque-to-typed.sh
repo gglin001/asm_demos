@@ -21,6 +21,7 @@ DIR=_demos/_collections && mkdir -p $DIR
 args=(
   #
   --import-llvm
+  # --opaque-pointers
   #
   -o $DIR/main.ll.mlir
   collections/main.ll
