@@ -33,7 +33,7 @@ args=(
   --opaque-pointers=0
   #
   -o $DIR/main.ll.mlir.ll
-  $DIR/main.ll.mir
+  $DIR/main.ll.mlir
   #
 )
 mlir-translate "${args[@]}"
