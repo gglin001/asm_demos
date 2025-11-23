@@ -6,4 +6,6 @@ platforms = ["osx-arm64"]
 version = "0.1.0"
 
 [dependencies]
+# opaque-to-typed.sh need mlir=15
+# mlir = "15.*"
 # llvmdev = "21.*"

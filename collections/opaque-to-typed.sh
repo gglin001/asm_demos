@@ -6,7 +6,9 @@ DIR=_demos/_collections && mkdir -p $DIR
 #   #
 #   # --no-opaque-pointers
 #   # --opaque-pointers
-#   --opaque-pointers=0
+#   # --opaque-pointers=0
+#   -passes='print<opaque-pointers=0>'
+#   # -passes='print'
 #   #
 #   -o $DIR/main.ll.ll
 #   collections/main.ll
