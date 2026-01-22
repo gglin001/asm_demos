@@ -6,6 +6,10 @@ platforms = ["osx-arm64"]
 version = "0.1.0"
 
 [dependencies]
-# opaque-to-typed.sh need mlir=15
-# mlir = "15.*"
-# llvmdev = "21.*"
+# mlir = ">=21.1.8,<22"
+
+[activation.env]
+# https://github.com/gglin001/llvm-mlir
+PATH_0 = "${PIXI_PROJECT_ROOT}/llvm-mlir/llvm-project/build/bin"
+PATH_1 = "${PIXI_PROJECT_ROOT}/llvm-mlir/llvm-project/build/bin"
+PATH = "${PATH_0}:${PATH_1}:${PATH}"

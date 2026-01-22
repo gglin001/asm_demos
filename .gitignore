@@ -13,3 +13,5 @@ toolchain/riscv-gnu-toolchain
 .pixi/*
 !.pixi/config.toml
 pixi.lock
+
+llvm-mlir
